@@ -1,35 +1,25 @@
 My new Branch Today
 Ok from test
 
-// Внутренним классом называют класс, который является членом другого класса.
-
 public class OuterClass {
 	
 	private String privateField = "Приватное поле внешнего класса.";
-	
-	// Статический блок инициализации.
+
+
 	static {
 	}
 	
-	// Вложенный внутренний класс может иметь любой модификатор доступа 
-	// (private, package—private (по умолчанию, когда не указан модификатор), protected, public).
 	class NestedInnerClass {
 		public void show() {
 			System.out.println("Метод внутреннего класса.");
 		}
-		
-		// Вложенный внутренний класс может получить доступ 
-		// к любому приватному полю или методу экземпляра внешнего класса.
+		.
 		public void getOuterPrivateField(OuterClass outer) {
 			System.out.println(outer.privateField);
 		}
 		
-		// Вложенный внутренний класс не может содержать в себе статических методов или статических полей. 
-		// Это связано с тем что, внутренний класс неявно связан с объектом своего внешнего класса, 
-		// поэтому он не может объявлять никаких статических методов внутри себя.
 	}
 	
-	// Так же как и классы, интерфейсы могут быть вложенными и иметь модификаторы доступа.
 	public interface InnerInterface {
 		public String hello = "Hello";
 		public void sayHello();
@@ -42,7 +32,16 @@ public class OuterClass {
 			System.out.println("Метод статического внутреннего класса.");
 		}
 	}
-	
+
+	// Статические вложенные классы технически не являются внутренними классами.
+	// По сути, они представляют собой члены внешнего класса.
+	static class StaticNestedClass {
+		public void show() {
+			System.out.println("Метод статического внутреннего класса.");
+		}
+	}
+
+
 	void outerMethod() {
 		System.out.println("Метод внешнего класса.");
 		
