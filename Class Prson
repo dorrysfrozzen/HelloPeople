@@ -1,0 +1,39 @@
+Person tom = new Person(); 
+ 
+
+class Person 
+{
+    public string name = "Undefined";
+    public int age;
+ 
+    public void Print()
+    {
+        Console.WriteLine($"Имя: {name}  Возраст: {age}");
+    }
+}
+
+
+Person tom = new Person(); 
+ 
+
+string personName = tom.name;
+int personAge = tom.age;
+Console.WriteLine($"Имя: {personName}  Возраст {personAge}");   // Имя: Undefined  Возраст: 0
+ 
+
+tom.name = "Tom";
+tom.age = 37;
+ 
+
+tom.Print();    // Имя: Tom  Возраст: 37
+ 
+class Person 
+{
+    public string name = "Undefined";
+    public int age;
+ 
+    public void Print()
+    {
+        Console.WriteLine($"Имя: {name}  Возраст: {age}");
+    }
+}
